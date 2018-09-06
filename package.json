@@ -1,0 +1,19 @@
+{
+  "name": "puhelinluettelo-server",
+  "version": "0.0.1",
+  "description": "This is coursework for part 3 of Fullstack course organized by Univerity of Helsinki",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leevi Lehtonen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
