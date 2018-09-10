@@ -44,16 +44,17 @@ app.post("/api/persons", (req, res) => {
                 return res.status(400).json({
                     error: 'name must be unique'
                 })
+            } else {
+                const person = new Person({
+                    name: req.body.name,
+                    number: req.body.number,
+                })
+                person
+                    .save()
+                    .then(Person.format)
+                    .then(person => res.json(person));
             }
         })
-
-    const person = new Person({
-        name: req.body.name,
-        number: req.body.number,
-    })
-    person
-        .save()
-        .then(data => res.json(data));
 
 
 })
