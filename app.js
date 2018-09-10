@@ -68,6 +68,7 @@ app.put("/api/persons/:id", (req, res) => {
 app.get("/api/persons/:id", (req, res) => {
     Person
         .findById(req.params.id)
+        .then(Person.format)
         .then(data => res.json(data))
         .catch(err => res.status(404).end())
 })
