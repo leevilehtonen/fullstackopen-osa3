@@ -58,6 +58,13 @@ app.post("/api/persons", (req, res) => {
 
 })
 
+app.put("/api/persons/:id", (req, res) => {
+    Person
+        .findOneAndUpdate({_id:req.params.id}, req.body, {new: true})
+        .then(Person.format)
+        .then(person => res.json(person))
+
+})
 app.get("/api/persons/:id", (req, res) => {
     Person
         .findById(req.params.id)
