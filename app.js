@@ -31,8 +31,9 @@ app.get("/api/persons", (req, res) => {
     res.json(persons);
 })
 
-app.get("/api/persons", (req, res) => {
-    res.json(persons);
+app.get("/api/persons/:id", (req, res) => {
+    const person = persons.find(note => note.id === Number(req.params.id))
+    person ? res.json(person) : res.status(404).end()
 })
 
 app.get("/info", (req, res) => {
